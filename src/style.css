@@ -1,0 +1,84 @@
+.box {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box_form {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.js_btn {
+  padding: 7px 9px;
+  border-radius: 15px;
+  color: white;
+  background-color: dodgerblue;
+  border: 2px solid darkslategray;
+  font-size: 15px;
+}
+
+.js_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+}
+
+.js_item {
+    width: 350px;
+    border: 2px solid rgb(1, 6, 6);
+    height: 450px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.js_img {
+    width: 350px;
+    height: 200px;
+    border-radius: 10px 10px 0 0;
+}
+
+.box_inp {
+    width: 200px;
+     border: 2px solid darkslategray;
+    border-radius: 12px;
+    height: 25px;
+    background-color: rgb(226, 228, 231);
+}
+
+.box_btn {
+border: none;
+background-color: transparent;
+}
+ .js_desc {
+    font-size: 20px;
+
+ }
+
+ .js_title {
+    font-size: 25px;
+ }
+
+ .js_link {
+    text-decoration: none;
+    font-size: 20px;
+    color: gray;
+ }
+
+ .js_link:hover{
+    color: dodgerblue;
+ }
+
+ .box_photo{
+    width: 25px;
+ }
