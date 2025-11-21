@@ -7,7 +7,7 @@ let searchValue = "";
 
 function getApi() {
   return fetch(
-    `https://newsapi.org/v2/everything?q=${searchValue}&from=2025-10-19&sortBy=publishedAt&apiKey=09de3f48ee0a4331be44f900830e74be&pageSize=3&page=${page}`
+    `https://pixabay.com/api/?key=53352836-dad5189717df5eb8e42c0a0ba&q=${searchValue}&per_page=3&page=${page}`
   ).then((res) => res.json());
 }
 
@@ -15,19 +15,21 @@ formEl.addEventListener("submit", (evt) => {
   evt.preventDefault();
   listEl.innerHTML = "";
   page = 1;
-  searchValue = evt.currentTarget.name.value;
-  getApi().then((res) => render(res.articles));
+
+  searchValue = evt.currentTarget.elements.name.value;
+
+  getApi().then((res) => render(res.hits));
 });
 
 function render(array) {
   const item = array
-    .map(({ author, title, url, urlToImage }) => {
+    .map(({ user, tags, largeImageURL, pageURL }) => {
       return `
       <li class="js_item">
-        <img src="${urlToImage}" alt="${title}" class="js_img">
-        <h2 class="js_desc">${title}</h2>
-        <h3 class="js_title">${author}</h3>
-        <a href="${url}" class="js_link">Follow the link</a>
+        <img src="${largeImageURL}" alt="${tags}" class="js_img">
+        <h2 class="js_desc">${tags}</h2>
+        <h3 class="js_title">Автор: ${user}</h3>
+        <a href="${pageURL}" class="js_link" target="_blank">Відкрити</a>
       </li>`;
     })
     .join("");
@@ -37,5 +39,5 @@ function render(array) {
 
 btnEl.addEventListener("click", () => {
   page += 1;
-  getApi().then((res) => render(res.articles));
+  getApi().then((res) => render(res.hits));
 });

@@ -59,7 +59,15 @@
 .box_btn {
 border: none;
 background-color: transparent;
+padding: 3px;
+cursor: pointer;
 }
+
+.box_btn:hover{
+border: 1px solid black;
+border-radius: 8px;
+}
+
  .js_desc {
     font-size: 20px;
 
